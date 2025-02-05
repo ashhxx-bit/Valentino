@@ -1,4 +1,3 @@
-.......
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +35,8 @@
     </style>
 </head>
 <body>
-    <h1>Will You Be My Valentine? ❤️</h1>
-    <p>You're my favorite person in the world. Say yes? 😊</p>
+    <h1>Will You Be My Valentine Mr.techyyy ? ❤️</h1>
+    <p>You're a headache but i want this headache everyday . Say yes? 😊</p>
     <button class="heart-button" onclick="showLove()">YES!</button>
 
     <script>
