@@ -82,7 +82,7 @@
 
     <div class="love-message" id="loveMessage">
         <p>Yay! 🎉 I knew you'd say YES! 💖</p>
-        <p>I'M TECHYYY TOOOOOO SO I WIN ! AND OK FINE I love you! MWAHH PUCHII😘 btw that's how u be the boyfriend of this relationship hahahahhahahahahaha.....</p>
+        <p>I'M TECHYYY TOOOOOO SO I WIN ! AND OK I love you!😘 btw that's how u be the boyfriend of this relationship hahahahhahahahahaha.....</p>
     </div>
 
     <div class="sad-message" id="sadMessage">
