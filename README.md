@@ -73,21 +73,21 @@
 <body>
 
     <h1>Will You Be My Valentine? ❤️</h1>
-    <p> choose... 😊</p>
+    <p>You have to choose...</p>
 
     <div class="button-container">
         <button class="heart-button" onclick="showLove()">YES!</button>
-        <button class="no-button" onclick="showSad()">NO 😢</button>
+        <button class="no-button" onclick="showSad()">NO </button>
     </div>
 
     <div class="love-message" id="loveMessage">
-        <p>I DID IT !! I'M TECHYYY TOOOOOOOO , AND IM THE BOYFRIEND </p>
-        <p>YEAH FINE I LOVE YOU  😘</p>
+        <p>Yay! 🎉 I knew you'd say YES! 💖</p>
+        <p>I'M TECHYYY TOOOOOO SO I WIN ! AND OK FINE I love you! MWAHH PUCHII😘 btw that's how u be the boyfriend of this relationship hahahahhahahahahaha.....</p>
     </div>
 
     <div class="sad-message" id="sadMessage">
         <p>Oh no... 💔</p>
-        <p>AND OH FUCKKKKKKK YOUUUUUUUU</p>
+        <p>And OHHH FUCKKKK YOUUUUUUU ☺️☺️☺️☺️☺️☺️ </p>
     </div>
 
     <audio id="bg-music" loop>
@@ -104,6 +104,7 @@
             document.getElementById("sadMessage").style.display = "none";
             document.getElementById("bg-music").play();
             document.getElementById("sad-music").pause();
+            createFlirtyEmoji();  // Start creating 😏 emojis
         }
 
         function showSad() {
@@ -111,10 +112,21 @@
             document.getElementById("loveMessage").style.display = "none";
             document.getElementById("sad-music").play();
             document.getElementById("bg-music").pause();
-            createSadEmoji();  // Start creating sad emojis
+            createSadEmoji();  // Start creating ☺️ emojis
         }
 
-        // Create sarcastic floating emojis when "NO" is clicked
+        // Create flirty 😏 emojis when "YES" is clicked
+        function createFlirtyEmoji() {
+            const emoji = document.createElement("div");
+            emoji.classList.add("emoji");
+            emoji.innerHTML = "😏";
+            emoji.style.left = Math.random() * 100 + "vw";  // Random horizontal position
+            emoji.style.animationDuration = Math.random() * 3 + 2 + "s";  // Random float speed
+            document.body.appendChild(emoji);
+            setTimeout(() => { emoji.remove(); }, 4000); // Remove emoji after animation
+        }
+
+        // Create sarcastic ☺️ emojis when "NO" is clicked
         function createSadEmoji() {
             const emoji = document.createElement("div");
             emoji.classList.add("emoji");
@@ -125,7 +137,8 @@
             setTimeout(() => { emoji.remove(); }, 4000); // Remove emoji after animation
         }
 
-        // Continuously create sad emojis after "NO"
+        // Continuously create floating emojis after "YES" or "NO"
+        setInterval(createFlirtyEmoji, 500);
         setInterval(createSadEmoji, 500);
     </script>
 
