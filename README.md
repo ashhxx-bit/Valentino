@@ -63,14 +63,14 @@
 </head>
 <body>
 
-    <h1>Will You Be My Valentine? ❤️</h1>
-    <p>You're my favorite person in the world. Say yes? 😊</p>
+    <h1>Will You Be My Valentine Mr.Techyy nerdd? ❤️</h1>
+    <p>You're my favorite headache . Say yes? 😊</p>
     
     <button class="heart-button" onclick="showLove()">YES!</button>
 
     <div class="love-letter" id="loveLetter">
         <p>Dear Love,</p>
-        <p>You make every day magical, and I can’t imagine my life without you. From the little things to the big moments, you are my happiness. 💖</p>
+        <p>you make my day complete and i love youuu for that . u are my happy place alwayssss. 💖</p>
         <p>Will you be my Valentine? ❤️</p>
     </div>
 
