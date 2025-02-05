@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine Mr.Techyy nerd?</title>
+    <title>Will You Be My Valentine?</title>
     <style>
         body {
             text-align: center;
@@ -19,21 +19,33 @@
         p {
             font-size: 1.5em;
         }
-        .heart-button {
+        .button-container {
+            margin-top: 20px;
+        }
+        .heart-button, .no-button {
             display: inline-block;
             padding: 15px 30px;
             font-size: 1.5em;
             color: white;
-            background: #d6336c;
             border: none;
             border-radius: 30px;
             cursor: pointer;
             transition: 0.3s;
+            margin: 10px;
+        }
+        .heart-button {
+            background: #d6336c;
         }
         .heart-button:hover {
             background: #ff4d6d;
         }
-        .love-letter {
+        .no-button {
+            background: #333;
+        }
+        .no-button:hover {
+            background: #555;
+        }
+        .love-message, .sad-message {
             display: none;
             font-size: 1.3em;
             color: #333;
@@ -47,54 +59,74 @@
             margin-right: auto;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        /* Heart animation */
+        .emoji {
+            position: absolute;
+            font-size: 2em;
+            animation: float 4s ease-in-out infinite;
+        }
         @keyframes float {
             0% { transform: translateY(0); opacity: 1; }
             100% { transform: translateY(-100vh); opacity: 0; }
-        }
-        .heart {
-            position: absolute;
-            bottom: -10px;
-            font-size: 2em;
-            color: red;
-            animation: float 5s linear infinite;
         }
     </style>
 </head>
 <body>
 
-    <h1>Will You Be My Valentine Mr.Techyy nerdd? ❤️</h1>
-    <p>You're my favorite headache . Say yes? 😊</p>
-    
-    <button class="heart-button" onclick="showLove()">YES!</button>
+    <h1>Will You Be My Valentine? ❤️</h1>
+    <p> choose... 😊</p>
 
-    <div class="love-letter" id="loveLetter">
-        <p>Dear Love,</p>
-        <p>you make my day complete and i love youuu for that . u are my happy place alwayssss. 💖</p>
-        <p>Will you be my Valentine? ❤️</p>
+    <div class="button-container">
+        <button class="heart-button" onclick="showLove()">YES!</button>
+        <button class="no-button" onclick="showSad()">NO 😢</button>
+    </div>
+
+    <div class="love-message" id="loveMessage">
+        <p>I DID IT !! I'M TECHYYY TOOOOOOOO , AND IM THE BOYFRIEND </p>
+        <p>YEAH FINE I LOVE YOU  😘</p>
+    </div>
+
+    <div class="sad-message" id="sadMessage">
+        <p>Oh no... 💔</p>
+        <p>AND OH FUCKKKKKKK YOUUUUUUUU</p>
     </div>
 
     <audio id="bg-music" loop>
         <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
     </audio>
+    
+    <audio id="sad-music" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-sad.mp3" type="audio/mp3">
+    </audio>
 
     <script>
         function showLove() {
-            document.getElementById("loveLetter").style.display = "block";
+            document.getElementById("loveMessage").style.display = "block";
+            document.getElementById("sadMessage").style.display = "none";
             document.getElementById("bg-music").play();
+            document.getElementById("sad-music").pause();
         }
 
-        // Create floating hearts
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "❤️";
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-            document.body.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 5000);
+        function showSad() {
+            document.getElementById("sadMessage").style.display = "block";
+            document.getElementById("loveMessage").style.display = "none";
+            document.getElementById("sad-music").play();
+            document.getElementById("bg-music").pause();
+            createSadEmoji();  // Start creating sad emojis
         }
-        setInterval(createHeart, 500);
+
+        // Create sarcastic floating emojis when "NO" is clicked
+        function createSadEmoji() {
+            const emoji = document.createElement("div");
+            emoji.classList.add("emoji");
+            emoji.innerHTML = "☺️";
+            emoji.style.left = Math.random() * 100 + "vw";  // Random horizontal position
+            emoji.style.animationDuration = Math.random() * 3 + 2 + "s";  // Random float speed
+            document.body.appendChild(emoji);
+            setTimeout(() => { emoji.remove(); }, 4000); // Remove emoji after animation
+        }
+
+        // Continuously create sad emojis after "NO"
+        setInterval(createSadEmoji, 500);
     </script>
 
 </body>
